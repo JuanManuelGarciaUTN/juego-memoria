@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+    <h1>Mejores Tiempos</h1>
+    <h2>Facil</h2>
+    <div class="resultados">
+      <div  class="linea" *ngFor="let item of facil">
+        <div class="primero">{{item.correo}}</div>
+        <div class="segundo">{{item.tiempo}}s</div>
+      </div>
+    </div>
+    <h2>Medio</h2>
+    <div class="resultados">
+      <div  class="linea" *ngFor="let item of medio">
+        <div class="primero">{{item.correo}}</div>
+        <div class="segundo">{{item.tiempo}}s</div>
+      </div>
+    </div>
+    <h2>Dificil</h2>
+    <div class="resultados">
+      <div  class="linea" *ngFor="let item of dificil">
+        <div class="primero">{{item.correo}}</div>
+        <div class="segundo">{{item.tiempo}}s</div>
+      </div>
+    </div>
+  </div>
+</ion-content>

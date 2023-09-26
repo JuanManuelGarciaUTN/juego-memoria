@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor" *ngIf="!jugando">
+    <h1>Juego De Memoria</h1>
+    <img src="../../assets/ic_launcher.png" width="25%" alt="">
+    <div class="center">
+      <button (click)="IniciarFacil()">Jugar Facil</button>
+      <button (click)="IniciarMedio()">Jugar Medio</button>
+      <button (click)="IniciarDificil()">Jugar Dificil</button>
+      <button (click)="accederPuntajes()">Mejores Puntajes</button>
+    </div>
+    <button (click)="cerrarSesion()" class="salir">Cerrar Sesion</button>
+  </div>
+  <app-juego *ngIf="jugando" [dificultad]="dificultad"></app-juego>
+</ion-content>

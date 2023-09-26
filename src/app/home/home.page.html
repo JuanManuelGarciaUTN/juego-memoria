@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+    <img src="../../assets/ic_launcher.png" width="25%" alt="">
+    <form class="form" [formGroup]="form" (ngSubmit)="Login()">
+      <div class="left">
+        <label class="tipo" for="">Correo Electrónico</label>
+        <input type="email" formControlName="email" placeholder="Ingrese correo electrónico">
+        <label class="tipo" for="">Contraseña</label>
+        <input type="password" formControlName="password" placeholder="Ingrese el secreto">
+      </div>
+      <div class="right">
+        <ion-fab-button (click)="Login()" [disabled]="form.invalid || validando" color="warning">
+          <ion-icon name="send-outline"></ion-icon>
+        </ion-fab-button> 
+      </div>
+    </form>
+    <h1>Juego</h1>
+    <h1>De</h1>
+    <h1>Memoria</h1>
+    <div class="mostrar-error">
+      <div *ngIf="validando" class="center">
+        <ion-spinner name="dots"></ion-spinner>
+        <h2>Validando...</h2> 
+      </div>
+      <div *ngIf="(form.get('email')?.touched && !form.get('email')?.valid)||
+      form.get('password')?.touched && !form.get('password')?.valid ||
+      loginInvalido" class="center">
+        <ion-fab-button size="small" color="warning"
+        *ngIf="(form.get('email')?.touched && !form.get('email')?.valid)||
+        form.get('password')?.touched && !form.get('password')?.valid ||
+        loginInvalido">
+          <ion-icon name="alert-outline"></ion-icon>
+        </ion-fab-button> 
+        <h2 *ngIf="form.get('email')?.touched && !form.get('email')?.valid">Correo Inválido</h2> 
+        <h2 *ngIf="form.get('password')?.touched && !form.get('password')?.valid">Falta Contraseña</h2> 
+        <h2 *ngIf="loginInvalido">Credenciales Invalidas</h2>
+      </div>
+    </div>
+    <ion-fab slot="fixed" horizontal="center" vertical="bottom" [hidden]="validando">
+      <ion-fab-button color="warning">
+        <ion-icon name="arrow-up-circle-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button class="fit" (click)="completarAdmin()">
+          1
+        </ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="end">
+        <ion-fab-button class="fit" (click)="completarAnonimo()">
+          4
+        </ion-fab-button>
+        <ion-fab-button class="fit" (click)="completarTester()">
+          5
+        </ion-fab-button>
+      </ion-fab-list>
+      <ion-fab-list side="start">
+        <ion-fab-button class="fit" (click)="completarUsuario()">
+          3
+        </ion-fab-button>
+        <ion-fab-button class="fit" (click)="completarInvitado()">
+          2
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+</ion-content>
