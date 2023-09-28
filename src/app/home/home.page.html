@@ -4,7 +4,7 @@
     <form class="form" [formGroup]="form" (ngSubmit)="Login()">
       <div class="left">
         <label class="tipo" for="">Correo Electrónico</label>
-        <input type="email" formControlName="email" placeholder="Ingrese correo electrónico">
+        <input type="email" formControlName="email" placeholder="Ingrese correo">
         <label class="tipo" for="">Contraseña</label>
         <input type="password" formControlName="password" placeholder="Ingrese el secreto">
       </div>
@@ -14,9 +14,7 @@
         </ion-fab-button> 
       </div>
     </form>
-    <h1>Juego</h1>
-    <h1>De</h1>
-    <h1>Memoria</h1>
+    <h1>Juego De Memoria</h1>
     <div class="mostrar-error">
       <div *ngIf="validando" class="center">
         <ion-spinner name="dots"></ion-spinner>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BaseDeDatosService } from '../services/base-de-datos.service';
+import {SplashScreen} from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,12 @@ export class HomePage {
       'email': ['', [Validators.required, Validators.email]],
       'password':['', [Validators.required]],
     });
+  }
+
+  ngAfterViewInit(){
+    setTimeout(()=>{
+      SplashScreen.hide();
+    }, 1500); 
   }
 
   Login(){

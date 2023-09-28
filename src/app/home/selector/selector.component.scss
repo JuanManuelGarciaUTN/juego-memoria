@@ -27,6 +27,10 @@
   }
   
   .contenedor{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
     margin: 0px;
@@ -48,7 +52,7 @@
   }
   
   img{
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     border-radius: 50%;
     border: 2px solid #ffc409;
     box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
@@ -91,7 +95,7 @@
     align-items: center;
     border-radius: 40px;
     border: 2px solid #ffc409;
-    padding: 40px 20px;
+    padding: 5px 20px;
     box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
     background-color: whitesmoke;
   }
@@ -101,7 +105,7 @@
     border: none;
     background-color: rgba(0,0,0,0);
     box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.14), 0 0px 0px 0 rgba(0, 0, 0, 0.12);
-    margin-top: 50px;
+    margin-top: 5px;
     font-size: 20px;
     color: red;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
