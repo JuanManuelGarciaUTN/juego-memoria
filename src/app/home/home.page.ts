@@ -14,6 +14,7 @@ export class HomePage {
   public form!: FormGroup;
   public loginInvalido = false;
   public validando = false;
+  public cargando = false;
   
   constructor(private fb: FormBuilder,private router : Router, private db: BaseDeDatosService){ 
     this.db.usuario = undefined;
@@ -24,9 +25,13 @@ export class HomePage {
   }
 
   ngAfterViewInit(){
+    this.cargando = true;
     setTimeout(()=>{
       SplashScreen.hide();
-    }, 1500); 
+      setTimeout(()=>{
+        this.cargando = false;
+      }, 2500);
+    }, 1000); 
   }
 
   Login(){
@@ -42,6 +47,7 @@ export class HomePage {
           datos.clave = "";
           this.db.login(datos);
           this.validando = false;
+          this.limpiarInputs();
           this.router.navigate(["selector"]);
           return;
         }
@@ -54,6 +60,11 @@ export class HomePage {
   private limpiarEspacios(){
     this.form.get('email')?.setValue(this.form.get('email')?.value.trim());
     this.form.get('password')?.setValue(this.form.get('password')?.value.trim());
+  }
+
+  private limpiarInputs(){
+    this.form.get('email')?.setValue("");
+    this.form.get('password')?.setValue("");
   }
 
   completarInvitado(){

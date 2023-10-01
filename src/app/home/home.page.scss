@@ -124,3 +124,45 @@ input{
   padding: 5px;
   margin-bottom: 10px;
 }
+
+.splash-animado{
+  padding-top: 40px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #db995b;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.splash-animado h1{
+  text-align: center;
+  margin: 5px 0px;
+  font-size: 60px;
+}
+
+.posicion{
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+}
+.icon-animado{
+  border-radius: 50%;
+  border: 0px solid white;
+  background-color: white;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  animation: shake 3.5s; 
+}
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(2880deg); }
+}
