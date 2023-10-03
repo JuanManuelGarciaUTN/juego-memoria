@@ -25,13 +25,20 @@ export class HomePage {
   }
 
   ngAfterViewInit(){
-    this.cargando = true;
-    setTimeout(()=>{
-      SplashScreen.hide();
+    if(this.db.usuario){
+      this.db.usuario = undefined;
+    }
+    else{
       setTimeout(()=>{
-        this.cargando = false;
-      }, 2500);
-    }, 1000); 
+        this.cargando = true;
+        setTimeout(()=>{
+          SplashScreen.hide();
+          setTimeout(()=>{
+            this.cargando = false;
+          }, 2500);
+        }, 1000);
+      },500);
+    }
   }
 
   Login(){

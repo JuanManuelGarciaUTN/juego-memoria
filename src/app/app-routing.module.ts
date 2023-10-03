@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { SelectorComponent } from './home/selector/selector.component';
 import { ResultadosComponent } from './home/resultados/resultados.component';
-import { JuegoComponent } from './home/juego/juego.component';
+import { DificilComponent } from './home/dificil/dificil.component';
+import { MedioComponent } from './home/medio/medio.component';
+import { FacilComponent } from './home/facil/facil.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,21 @@ const routes: Routes = [
   {
     path: 'selector',
     component: SelectorComponent,
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'facil',
+    component: FacilComponent,
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'medio',
+    component: MedioComponent,
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'dificil',
+    component: DificilComponent,
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {

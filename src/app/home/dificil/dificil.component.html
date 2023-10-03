@@ -1,0 +1,22 @@
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+    <div *ngIf="!jugando" class="iniciador">
+      <p *ngIf="ganaste">Ganaste en {{tiempo | number: '1.2-2'}} segundos</p>
+      <button (click)="iniciarJuego()">Iniciar Juego</button>
+      <button *ngIf="ganaste" (click)="volver()">Volver Al Inicio</button>
+    </div>
+    <div class="contador">
+      <p>{{tiempo | number: '1.2-2'}}</p>
+      <p>segundos</p>
+    </div>
+    <div class="juego">
+      <div *ngFor="let item of cartas; index as i">
+        <img  [hidden]="item.estado" src="../../../assets/back.png" (click)="seleccionarCarta(i)">
+        <img [hidden]="!item.estado" [src]="obtenerImagen(item)">
+      </div>
+    </div>
+  </div>
+  <div class="precarga">
+    <img *ngFor="let img of cartas;" [src]="obtenerImagen(img)"/>
+  </div>
+</ion-content>

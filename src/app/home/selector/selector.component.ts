@@ -10,40 +10,28 @@ import { BaseDeDatosService } from 'src/app/services/base-de-datos.service';
 export class SelectorComponent  implements OnInit {
 
   public jugando = false;
-  public dificultad: Dificultad = 1;
 
-  constructor(private router: Router, private db: BaseDeDatosService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
   cerrarSesion(){
-    this.db.usuario = undefined;
     this.router.navigate(['home']);
   }
 
   accederPuntajes(){
-    this.db.usuario = undefined;
     this.router.navigate(['resultados']);
   }
 
   IniciarFacil(){
-    this.jugando = true;
-    this.dificultad = Dificultad.facil;
+    this.router.navigate(['facil']);
   }
 
   IniciarMedio(){
-    this.jugando = true;
-    this.dificultad = Dificultad.medio;
+    this.router.navigate(['medio']);
   }
 
   IniciarDificil(){
-    this.jugando = true;
-    this.dificultad = Dificultad.dificil;
+    this.router.navigate(['dificil']);
   }
-}
-
-export enum Dificultad{
-  facil,
-  medio,
-  dificil
 }

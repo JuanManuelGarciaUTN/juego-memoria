@@ -5,21 +5,24 @@
     <div class="resultados">
       <div  class="linea" *ngFor="let item of facil">
         <div class="primero">{{item.correo}}</div>
-        <div class="segundo">{{item.tiempo}}s</div>
+        <div class="segundo">{{item.fecha | date: 'dd/MM/YY': 'UTC-3'}}</div>
+        <div class="segundo">{{item.tiempo | number: '1.2-2'}}s</div>
       </div>
     </div>
     <h2>Medio</h2>
     <div class="resultados">
       <div  class="linea" *ngFor="let item of medio">
         <div class="primero">{{item.correo}}</div>
-        <div class="segundo">{{item.tiempo}}s</div>
+        <div class="segundo">{{item.fecha | date: 'dd/MM/YY': 'UTC-3'}}</div>
+        <div class="segundo">{{item.tiempo | number: '1.2-2'}}s</div>
       </div>
     </div>
     <h2>Dificil</h2>
     <div class="resultados">
       <div  class="linea" *ngFor="let item of dificil">
         <div class="primero">{{item.correo}}</div>
-        <div class="segundo">{{item.tiempo}}s</div>
+        <div class="segundo">{{item.fecha | date: 'dd/MM/YY': 'UTC-3'}}</div>
+        <div class="segundo">{{item.tiempo | number: '1.2-2'}}s</div>
       </div>
     </div>
   </div>
